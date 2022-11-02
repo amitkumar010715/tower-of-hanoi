@@ -1,0 +1,22 @@
+// tower of hanoi 
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve(int n,int source,int destination,int helper ){
+   //base case
+    if (n==0)
+    {
+        return ;
+    }
+      solve(n-1,source,helper,destination);// except bigger disk all disk goes to helper rod
+      cout<<n<<" goes from "<<source<<" to "<<helper<<endl; //larger disk goes to distination rod
+      solve(n-1,source,destination,helper);// now put all disk contain by helper to the destination
+}
+
+int main()
+{
+    int n=3;
+    int s=1,h=2,d=3;
+    solve(n,s,d,h);
+    return 0;
+}
